@@ -15,7 +15,7 @@
 
 - Страница с минимальными настройками — [example_min.html](./example_min.html)
 - Страница с максимальными настройками — [example_max.html](./example_max.html)
-
+- Страница сделанная по уроку — [index.html](https://vasiliykas.github.io/coding-a-video-player/)
 ## Как подключить
 
 JS код поставляется в виде одного файла `player.js`, который нужно скачать из этого репозитория. Для работы он требует двух библиотек - [jQuery](https://jquery.com/) и [Playable](https://wix.github.io/playable/). Пример подключения в браузере:
