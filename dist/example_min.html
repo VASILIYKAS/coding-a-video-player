@@ -24,7 +24,7 @@
       width: 100%;
       background-color: RGB(0, 0, 0);
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
     }
     
     .player {
@@ -35,13 +35,34 @@
       flex-direction: column;
     }
     
+    .progress {
+      width: 98%;
+      background-color: rgba(128, 128, 128, 0.521);
+      margin: 0 auto;
+      margin-bottom: 8px;
+    }
+
+    .progress-slider {
+      height: 7px;
+      background-color: red;
+      width: 100%;
+    }
+
+    .controls-buttons {
+      display: flex;
+      justify-content: space-between;
+    }
   </style>
 </head>
 <link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
 <body>
   <div class="player" id="player">
     <div class="video-container js-video-container"></div>
-      <div class="player-controls">
+    <div class="player-controls">
+      <div class="progress js-progress">
+        <div class="progress-slider js-progress-slider"></div>
+      </div>
+      <div class="controls-buttons">
         <div>
           <button type="button" class="media-button js-play-button">
             <i class="fa fa-play" aria-hidden="true"></i>
@@ -60,7 +81,7 @@
           <i class="fa fa-expand" aria-hidden="true"></i>
         </button>
       </div>
-    <!-- Here can be placed player controls: play and volume buttons -->
+    </div>
   </div>
     
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
