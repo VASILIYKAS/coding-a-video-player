@@ -1,103 +1,149 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
   <title>Пример подключения плеера</title>
   <meta charset="utf-8">
   <style>
-    .media-button {
-      width: 32px;
-      height: 47px;
-      border: none;
-      cursor: pointer;
-      color:white;
-      background-color: transparent;
-      font-size: 15pt;
-    }
-
-    .video-container {
-      width: 100%;
-      height: 100%;
-      flex-grow: 1;
-    }
-
-    .player-controls {
-      width: 100%;
-      background-color: RGB(0, 0, 0);
-      display: flex;
-      flex-direction: column;
-    }
-    
     .player {
       width: 800px;
       height: 600px;
+      background: #000;
       box-shadow: 0px 0px 12px rgb(0, 0, 0);
       display: flex;
       flex-direction: column;
     }
     
-    .progress {
-      width: 98%;
-      background-color: rgba(128, 128, 128, 0.521);
-      margin: 0 auto;
-      margin-bottom: 8px;
-    }
-
-    .progress-slider {
-      height: 7px;
-      background-color: red;
+    .video-container {
       width: 100%;
+      height: 100%;
+      flex-grow: 1;
     }
-
-    .controls-buttons {
+    
+    .bottom-controls {
+      background: rgb(0, 0, 0);
+      padding: 8px 10px;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      gap: 8px;
     }
-
-    .expand-button {
-      margin-right: 5px;
+    
+    .controls-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .left-buttons {
+      display: flex;
+      gap: 25px;
+    }
+    
+    .viewing-panel {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    
+    .progress {
+      height: 5px;
+      background: rgba(255,255,255,0.2);
+      cursor: pointer;
+    }
+    
+    .progress-slider {
+      height: 100%;
+      background: red;
+      width: 0%;
+    }
+    
+    .viewing-time {
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      display: flex;
+      gap: 5px;
+    }
+    
+    .right-buttons {
+      margin-left: 704px;
+    }
+    
+    .media-button {
+      width: 0px;
+      height: 32px;
+      border: none;
+      background: transparent;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .media-button:hover {
+      opacity: 0.8;
+    }
+    
+    [hidden] {
+      display: none !important;
     }
   </style>
 </head>
-<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
 <body>
   <div class="player" id="player">
     <div class="video-container js-video-container"></div>
-    <div class="player-controls">
-      <div class="progress js-progress">
-        <div class="progress-slider js-progress-slider"></div>
+    
+    <div class="bottom-controls">
+      <div class="viewing-panel">
+        <div class="progress js-progress">
+          <div class="progress-slider js-progress-slider"></div>
+        </div>
+        <div class="viewing-time">
+          <span class="js-current-time">00:00</span>
+          —
+          <span class="js-duration">00:00</span>
+        </div>
       </div>
-      <div class="controls-buttons">
-        <div>
+      
+      <div class="controls-row">
+        <div class="left-buttons">
           <button type="button" class="media-button js-play-button">
             <i class="fa fa-play" aria-hidden="true"></i>
           </button>
-          <button type="button" class="media-button js-pause-button">
+          <button type="button" class="media-button js-pause-button" hidden>
             <i class="fa fa-pause" aria-hidden="true"></i>
           </button>
           <button type="button" class="media-button js-mute-button">
             <i class="fa fa-volume-up" aria-hidden="true"></i>
           </button>
-          <button type="button" class="media-button js-volume-button">
+          <button type="button" class="media-button js-volume-button" hidden>
             <i class="fa fa-volume-off" aria-hidden="true"></i>
           </button>
         </div>
-        <button type="button" class="expand-button media-button js-fullscreen-button">
-          <i class="fa fa-expand" aria-hidden="true"></i>
-        </button>
+        
+        <div class="right-buttons">
+          <button type="button" class="media-button js-fullscreen-button">
+            <i class="fa fa-expand" aria-hidden="true"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
-    
+
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
   <script src="player.js"></script>
-    
+
   <script type="text/javascript">
     createPlayer({elementId: 'player'});
   </script>
-
 </body>
 </html>
-
-
