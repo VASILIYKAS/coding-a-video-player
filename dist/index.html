@@ -106,7 +106,7 @@
       opacity: 0.8;
     }
     
-    .circle {
+    .progress-marker {
       height: 8px;
       width: 8px;
       background-color: red;
@@ -117,6 +117,13 @@
       display: inline-block;
       margin-left: -6px;
       margin-top: -4px;
+      opacity: 0;
+      transition-property: opacity;
+      transition-duration: .3s
+    }
+
+    .background-progress:hover .progress-marker {
+      opacity: 1;
     }
     [hidden] {
       display: none !important;
@@ -153,7 +160,7 @@
           </div>
           <div class="background-progress js-progress">
             <div class="progress-slider js-progress-slider"></div>
-            <div class="circle">
+            <div class="progress-marker">
               <span class="dot"></span>
             </div>
           </div>
