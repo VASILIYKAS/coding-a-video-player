@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="reset.css">
   <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,17 +51,16 @@
 
     .viewing-panel {
       display: flex;
-      flex-direction: row;
+      flex-grow: 1;
       margin-left: 5px;
       align-items: center;
-      margin-right: 12px;
+      margin-right: 7px;
     }
     
     .background-progress {
-      min-width: 563px;
       height: 5px;
       margin-top: 2px;
-      
+      margin-right: 8px;
       background: rgb(0, 0, 0);
       cursor: pointer;
       display: flex;
@@ -86,7 +86,7 @@
     }
 
     .duration {
-      margin-left: 10px;
+      margin-right: 5px;
     }
     
     .media-button {
@@ -102,6 +102,10 @@
       justify-content: center;
     }
     
+    .right-buttons {
+      margin-right: 5px;
+    }
+
     .media-button:hover {
       opacity: 0.8;
     }
@@ -125,6 +129,7 @@
     .background-progress:hover .progress-marker {
       opacity: 1;
     }
+
     [hidden] {
       display: none !important;
     }

@@ -1,0 +1,13 @@
+body, html, .player {
+    margin: 8;
+    padding: 8;
+    box-sizing: border-box;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .viewing-panel, .controls-row {
+    min-width: 0;
+  }
