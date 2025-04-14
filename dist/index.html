@@ -51,7 +51,7 @@
     .viewing-panel {
       display: flex;
       flex-direction: row;
-      margin: 0 5px;
+      margin-left: 5px;
       align-items: center;
       margin-right: 12px;
     }
@@ -59,7 +59,9 @@
     .background-progress {
       min-width: 563px;
       height: 5px;
-      background: rgba(255,255,255,0.2);
+      margin-top: 2px;
+      
+      background: rgb(0, 0, 0);
       cursor: pointer;
       display: flex;
       flex-grow: 1;
@@ -68,6 +70,7 @@
     .progress-slider {
       height: 100%;
       background: red;
+      border-radius: 10px;
     }
     
     .time {
@@ -79,7 +82,7 @@
     }
 
     .current-time {
-      margin-right: 10px;
+      margin-right: 9px;
     }
 
     .duration {
@@ -103,6 +106,18 @@
       opacity: 0.8;
     }
     
+    .circle {
+      height: 8px;
+      width: 8px;
+      background-color: red;
+      border-radius: 50%;
+      border-style: solid;
+      border-color: white;
+      border-width: 3px;
+      display: inline-block;
+      margin-left: -6px;
+      margin-top: -4px;
+    }
     [hidden] {
       display: none !important;
     }
@@ -111,7 +126,6 @@
 <body>
   <div class="player" id="player">
     <div class="video-container js-video-container"></div>
-    
     <div class="bottom-controls">
       <div class="controls-row">
         <div class="left-buttons">
@@ -139,6 +153,9 @@
           </div>
           <div class="background-progress js-progress">
             <div class="progress-slider js-progress-slider"></div>
+            <div class="circle">
+              <span class="dot"></span>
+            </div>
           </div>
           <div>
             <span class="time duration js-duration">00:00</span>
