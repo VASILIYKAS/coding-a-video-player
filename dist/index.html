@@ -29,49 +29,61 @@
       padding: 8px 10px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
     }
     
     .controls-row {
       display: flex;
       align-items: center;
-      gap: 10px;
     }
     
     .left-buttons {
       display: flex;
-      gap: 25px;
+    }
+
+    .play-button {
+      margin-right: 25px;
     }
     
+    .volume-button {
+      margin-right: 9px;
+    }
+
     .viewing-panel {
-      flex-grow: 1;
       display: flex;
-      flex-direction: column;
-      gap: 5px;
+      flex-direction: row;
+      margin: 0 5px;
+      align-items: center;
+      margin-right: 12px;
     }
     
-    .progress {
+    .background-progress {
+      min-width: 563px;
       height: 5px;
       background: rgba(255,255,255,0.2);
       cursor: pointer;
+      display: flex;
+      flex-grow: 1;
     }
     
     .progress-slider {
       height: 100%;
       background: red;
-      width: 0%;
     }
     
-    .viewing-time {
+    .time {
       color: white;
-      font-family: 'Roboto', sans-serif;
-      font-size: 12px;
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 16px;
       display: flex;
-      gap: 5px;
     }
-    
-    .right-buttons {
-      margin-left: 704px;
+
+    .current-time {
+      margin-right: 10px;
+    }
+
+    .duration {
+      margin-left: 10px;
     }
     
     .media-button {
@@ -101,33 +113,38 @@
     <div class="video-container js-video-container"></div>
     
     <div class="bottom-controls">
-      <div class="viewing-panel">
-        <div class="progress js-progress">
-          <div class="progress-slider js-progress-slider"></div>
-        </div>
-        <div class="viewing-time">
-          <span class="js-current-time">00:00</span>
-          —
-          <span class="js-duration">00:00</span>
-        </div>
-      </div>
-      
       <div class="controls-row">
         <div class="left-buttons">
-          <button type="button" class="media-button js-play-button">
-            <i class="fa fa-play" aria-hidden="true"></i>
-          </button>
-          <button type="button" class="media-button js-pause-button" hidden>
-            <i class="fa fa-pause" aria-hidden="true"></i>
-          </button>
-          <button type="button" class="media-button js-mute-button">
-            <i class="fa fa-volume-up" aria-hidden="true"></i>
-          </button>
-          <button type="button" class="media-button js-volume-button" hidden>
-            <i class="fa fa-volume-off" aria-hidden="true"></i>
-          </button>
+          <div class="play-button">
+            <button type="button" class="media-button js-play-button">
+              <i class="fa fa-play" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="media-button js-pause-button" hidden>
+              <i class="fa fa-pause" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="volume-button">
+            <button type="button" class="media-button js-mute-button">
+              <i class="fa fa-volume-up" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="media-button js-volume-button" hidden>
+              <i class="fa fa-volume-off" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
         
+        <div class="viewing-panel">
+          <div class="viewing-time">
+            <span class="time current-time js-current-time">00:00</span>
+          </div>
+          <div class="background-progress js-progress">
+            <div class="progress-slider js-progress-slider"></div>
+          </div>
+          <div>
+            <span class="time duration js-duration">00:00</span>
+          </div>
+        </div>
+
         <div class="right-buttons">
           <button type="button" class="media-button js-fullscreen-button">
             <i class="fa fa-expand" aria-hidden="true"></i>
